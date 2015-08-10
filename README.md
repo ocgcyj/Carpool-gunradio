@@ -14,7 +14,11 @@ GNU Radio is an open source development toolkit that provides the digital signal
 Our project is built on the Ubuntu 12.04, with GNURadio 3.6 series. Please notes that the latest GNURadio version is 3.7 with major upgrade. In order to ensure the compatibility of our source code, make sure you have installed GnuRadio 3.6 series. 
 
 ### 1. To check the version of GNURadio:
-    sudo apt-get install liblog4cpp5-dev
-    sudo port install log4cpp
+    from gnuradio import gr
+    gr.version()
+
 ### 2. To install Gnuradio:
+Passing the flag -o will fetch and build the latest in the old 3.6 series
+[from source]http://gnuradio.org/redmine/projects/gnuradio/wiki/InstallingGRFromSource
+
 ### 3. To work with Gnuradio:
