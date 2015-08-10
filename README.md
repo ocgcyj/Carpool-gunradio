@@ -4,7 +4,7 @@ Carpool PHY layer is built atop open source GNURadio http://gnuradio.org/
 ## Introduction
 This is the source code of Carpool. The source is maintained locally and not published until the related paper is accepted.  
 
-__“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)__**
+_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
 
 Carpool is implemented both in PHY and MAC layer, which adopt the standard requirement of IEEE 802.11n. The PHY layer is built atop the OFDM implementation of GNURadio/USRP2, equipped with RFX2450. The MAC layer is realized by the trace-driven simulation under MATLAB with specific network setting.
 
