@@ -19,6 +19,6 @@ Our project is built on the Ubuntu 12.04, with GNURadio 3.6 series. Please notes
 
 ### 2. To install Gnuradio:
 Passing the flag -o will fetch and build the latest in the old 3.6 series
-[from source]http://gnuradio.org/redmine/projects/gnuradio/wiki/InstallingGRFromSource
+[from source](http://gnuradio.org/redmine/projects/gnuradio/wiki/InstallingGRFromSource)
 
 ### 3. To work with Gnuradio:
