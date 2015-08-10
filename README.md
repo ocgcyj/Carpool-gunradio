@@ -2,7 +2,7 @@
 Carpool PHY layer is built atop open source GNURadio http://gnuradio.org/
 
 ## Introduction
-This is the source code of Carpool. The source is maintained locally and not published until the related paper is accepted.  
+This is the source code of Carpool. The source is maintained locally by our research group and not published until the related paper is accepted.  
 
 **_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
 
@@ -23,3 +23,34 @@ Passing the flag -o will fetch and build the latest in the old 3.6 series
 
 ### 3. To work with Gnuradio:
 [tutorial](http://gnuradio.org/redmine/projects/gnuradio/wiki/Guided_Tutorial_GNU_Radio_in_C++)
+
+## PHY Layer Usage (C++)
+To enable the all the functionality of Carpool, please use the latest 3.0 version. Just copy the modified files and replace it if necessary. 
+
+### 1. For transmitter:
+    Copy _constellation_cyj.cc_, constellation_cyj.h, crc_cyj.h to the following path,
+    /gunradio/gr-digital/lib
+    Then, add file name to corresponding CMakelists
+    
+    Copy ofdm.py, ofdm_packet-utils.py to the following path,
+    /gunradio/gr-digital/python
+    
+    Copy digital_ofdm_insert_preamble.cc to the following path,
+    /gunradio/gr-digital/lib
+
+### 2. For receiver:
+    Copy constellation_cyj.cc, constellation_cyj.h, crc_cyj.h to the following path,
+    /gunradio/gr-digital/lib
+    Then, add file name to corresponding CMakelists
+    
+    Copy ofdm.py, ofdm_packet-utils.py to the following path,
+    /gunradio/gr-digital/python
+    
+    Copy digital_ofdm_frame_acquisition.cc to the following path,
+    /gunradio/gr-digital/lib
+
+### 3. Build the project:
+    cd  /gunradio/build
+    make 
+    sudo make install
+
