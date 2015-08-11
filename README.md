@@ -2,9 +2,8 @@
 Carpool PHY layer is built atop open source GNURadio http://gnuradio.org/
 
 ## Introduction
-This is the source code of Carpool. The source is maintained locally by our research group and not published until the related paper has been accepted recently.  
+This is the source code of Carpool[1]. The source is maintained locally by our research group and not published until the related paper has been accepted recently.  
 
-**_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
 
 Carpool is implemented both in PHY and MAC layer, which adopt the standard requirement of IEEE 802.11n. The PHY layer is built atop the OFDM implementation of GNURadio/USRP2, equipped with RFX2450. The MAC layer is realized by the trace-driven simulation under MATLAB with specific network setting.
 
@@ -57,6 +56,9 @@ To enable the all the functionality of Carpool, please use the latest 3.0 versio
 ### PHY Layer Analysis
 You can change different parameters (e.g. power, packet length, modulation scheme, etc.) or different schemes (e.g. 1 or 2 bit phase-offset encoding, baseline, average and conservative scheme) to perform the experiment. The bit error rate and packet receive rate both output in customized path specified in digital_ofdm_frame_acquisition.cc.
 
+### MAC Layer Usage and Analysis (MATLAB)
+The event-driven simulator conforms to carrier sense multiple access (CSMA). Five different variant schemes are implemented, including Carpool baseline, Carpool enhancement, DCF, MSDU aggregation and Wifox[2]. Only VOIP traffic model is provided. Just run the code and collect the output information (e.g. throughput and delay) for further analysis.
+
 ### Main Design and Implementation
 ### 1. Transmitter chain:
 1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation;
@@ -71,6 +73,7 @@ You can change different parameters (e.g. power, packet length, modulation schem
 4. Split the specific payload with an efficient and scalable header.
 
 ## Further information
-For further information please refer to the TMC paper.
+For further information please refer to the TMC paper[1].
 
-**_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
+[1]**_"Less Transmissions, More Throughput: Bringing Carpool to Public WLANs", IEEE Transactions on Mobile Computing (TMC 2015)_**
+[2]**_"WiFox: scaling WiFi performance for large audience environments," ACM In Proceedings of International Conference on emerging Networking EXperiments and Technologies (CoNEXT2012)_**
