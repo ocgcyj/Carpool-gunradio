@@ -28,7 +28,7 @@ Passing the flag -o will fetch and build the latest in the old 3.6 series
 To enable the all the functionality of Carpool, please use the latest 3.0 version. Just copy the modified files and replace it if necessary. 
 
 ### 1. For transmitter:
-    Copy _constellation_cyj.cc_, constellation_cyj.h, crc_cyj.h to the following path,
+    Copy constellation_cyj.cc, constellation_cyj.h, crc_cyj.h to the following path,
     /gunradio/gr-digital/lib
     Then, add file name to corresponding CMakelists
     
