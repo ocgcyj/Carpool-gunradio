@@ -59,17 +59,17 @@ You can change different parameters (e.g. power, packet length, modulation schem
 
 ### Main Design and Implementation
 ###Transmitter chain:
-1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation
-2. Insert four pilots in each OFDM symbol for phase-offset estimation and compensation
-3. Inject symbol level CRC checksum delivered by phase-offset encoding
-4. Aggregate the payload according to the long frame structure designed for multiple Wi-Fi receiver
+1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation;
+2. Insert four pilots in each OFDM symbol for phase-offset estimation and compensation;
+3. Inject symbol level CRC checksum delivered by phase-offset encoding;
+4. Aggregate the payload according to the long frame structure designed for multiple Wi-Fi receiver.
 
 ###Receiver chain:
-1. Realize two different hard-decision constellation de-mapping schemes
-2. Implement differential decoding algorithm between phase-offset estimation and compensation
-3. Enhance the iterative channel equalization algorithm for long frame reliable transmission
-4. Split the specific payload with an efficient and scalable header
+1. Realize two different hard-decision constellation de-mapping schemes;
+2. Implement differential decoding algorithm between phase-offset estimation and compensation;
+3. Enhance the iterative channel equalization algorithm for long frame reliable transmission;
+4. Split the specific payload with an efficient and scalable header.
 
 ## Further information
-For further information please refer to the TMC paper
+For further information please refer to the TMC paper.
 **_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
