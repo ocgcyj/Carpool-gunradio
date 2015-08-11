@@ -57,7 +57,7 @@ To enable the all the functionality of Carpool, please use the latest 3.0 versio
 ### PHY Layer Analysis
 You can change different parameters (e.g. power, packet length, modulation scheme, etc.) or different schemes (e.g. 1 or 2 bit phase-offset encoding, baseline, average and conservative scheme) to perform the experiment. The bit error rate and packet receive rate both output in customized path specified in digital_ofdm_frame_acquisition.cc.
 
-### Main Design and Implementation(refer to TMC paper)
+### Main Design and Implementation
 ###Transmitter chain:
 1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation
 2. Insert four pilots in each OFDM symbol for phase-offset estimation and compensation
@@ -69,3 +69,7 @@ You can change different parameters (e.g. power, packet length, modulation schem
 2. Implement differential decoding algorithm between phase-offset estimation and compensation
 3. Enhance the iterative channel equalization algorithm for long frame reliable transmission
 4. Split the specific payload with an efficient and scalable header
+
+## Further information
+For further information please refer to the TMC paper
+**_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
