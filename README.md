@@ -2,7 +2,7 @@
 Carpool PHY layer is built atop open source GNURadio http://gnuradio.org/
 
 ## Introduction
-This is the source code of Carpool. The source is maintained locally by our research group and not published until the related paper is accepted.  
+This is the source code of Carpool. The source is maintained locally by our research group and not published until the related paper has been accepted recently.  
 
 **_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
 
@@ -54,3 +54,17 @@ To enable the all the functionality of Carpool, please use the latest 3.0 versio
     make 
     sudo make install
 
+### PHY Layer Analysis
+You can change different parameters (e.g. power, packet length, modulation scheme, etc.) or different schemes (e.g. 1 or 2 bit phase-offset encoding, baseline, average and conservative scheme) to perform the experiment. The bit error rate and packet receive rate both output in customized path specified in digital_ofdm_frame_acquisition.cc.
+
+### Main Design and Implementation(refer to TMC paper)
+Transmitter chain:
+Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation
+Insert four pilots in each OFDM symbol for phase-offset estimation and compensation
+Inject symbol level CRC checksum delivered by phase-offset encoding
+Aggregate the payload according to the long frame structure designed for multiple Wi-Fi receiver
+Receiver chain:
+Realize two different hard-decision constellation de-mapping schemes
+Implement differential decoding algorithm between phase-offset estimation and compensation
+Enhance the iterative channel equalization algorithm for long frame reliable transmission
+Split the specific payload with an efficient and scalable header
