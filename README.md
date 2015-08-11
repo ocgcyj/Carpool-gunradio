@@ -1,7 +1,7 @@
 # Carpool-gunradio
 Carpool PHY layer is built atop open source GNURadio http://gnuradio.org/
 
-## Introduction
+## A. Introduction
 This is the source code of Carpool [1]. The source is maintained locally by our research group and not published until the related paper has been accepted recently.  
 
 
@@ -9,7 +9,7 @@ Carpool is implemented both in PHY and MAC layer, which adopt the standard requi
 
 GNU Radio is an open source development toolkit that provides the digital signal processing (DSP) blocks to implement software defined radios.  To ensure the runtime performance, the DSP blocks are implemented using C++. Through exploiting Python to connect different DSP blocks, we can fast emulate and prototype the low-level functionality of wireless protocol families (e.g. Wi-Fi, RFID, Bluetooth and Cellular, etc.).
 
-## Environment and Installation
+## B. Environment and Installation
 Our project is built on the Ubuntu 12.04, with GNURadio 3.6 series. Please notes that the latest GNURadio version is 3.7 with major upgrade. In order to ensure the compatibility of our source code, make sure you have installed GnuRadio 3.6 series. 
 
 ### 1. To check the version of GNURadio:
@@ -23,7 +23,7 @@ Passing the flag -o will fetch and build the latest in the old 3.6 series
 ### 3. To work with Gnuradio:
 [tutorial](http://gnuradio.org/redmine/projects/gnuradio/wiki/Guided_Tutorial_GNU_Radio_in_C++)
 
-## PHY Layer Usage (C++)
+## C. PHY Layer Usage (C++)
 To enable the all the functionality of Carpool, please use the latest 3.0 version. Just copy the modified files and replace it if necessary. 
 
 ### 1. For transmitter:
@@ -53,13 +53,13 @@ To enable the all the functionality of Carpool, please use the latest 3.0 versio
     make 
     sudo make install
 
-### PHY Layer Analysis
+## C. PHY Layer Analysis
 You can change different parameters (e.g. power, packet length, modulation scheme, etc.) or different schemes (e.g. 1 or 2 bit phase-offset encoding, baseline, average and conservative scheme) to perform the experiment. The bit error rate and packet receive rate both output in customized path specified in digital_ofdm_frame_acquisition.cc.
 
 ### MAC Layer Usage and Analysis (MATLAB)
 The event-driven simulator conforms to carrier sense multiple access (CSMA). Five different variant schemes are implemented, including Carpool baseline, Carpool enhancement, DCF, MSDU aggregation and Wifox [2]. Only VOIP traffic model is provided. Just run the code and collect the output information (e.g. throughput and delay) for further analysis.
 
-### Main Design and Implementation
+## D. Main Design and Implementation
 In order to prototype Carpool, the transceiver chain where the data stream flows, needs to be significantly modified. Specifically, I have upgraded several DSP blocks and implemented the proposed algorithms within several DSP blocks. The proposed algorithms mainly include, phase-offset encoding, differential decoding, and iterative channel equalization. All the real-time functionalities are realized by C++, where we apply dynamic memory allocation and STL to handle sequential complex data stream with varying length. Besides, performance evaluation is off-line analyzed via MATLAB.
 
 ### 1. Transmitter chain:
@@ -74,7 +74,7 @@ In order to prototype Carpool, the transceiver chain where the data stream flows
 3. Enhance the iterative channel equalization algorithm for long frame reliable transmission;
 4. Split the specific payload with an efficient and scalable header.
 
-## Reference 
+## E. Reference 
 [1]**_"Less Transmissions, More Throughput: Bringing Carpool to Public WLANs", IEEE Transactions on Mobile Computing (TMC 2015)_**
 
 [2]**_"WiFox: scaling WiFi performance for large audience environments," ACM In Proceedings of International Conference on emerging Networking EXperiments and Technologies (CoNEXT2012)_**
