@@ -58,13 +58,13 @@ To enable the all the functionality of Carpool, please use the latest 3.0 versio
 You can change different parameters (e.g. power, packet length, modulation scheme, etc.) or different schemes (e.g. 1 or 2 bit phase-offset encoding, baseline, average and conservative scheme) to perform the experiment. The bit error rate and packet receive rate both output in customized path specified in digital_ofdm_frame_acquisition.cc.
 
 ### Main Design and Implementation
-###Transmitter chain:
+### 1. Transmitter chain:
 1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation;
 2. Insert four pilots in each OFDM symbol for phase-offset estimation and compensation;
 3. Inject symbol level CRC checksum delivered by phase-offset encoding;
 4. Aggregate the payload according to the long frame structure designed for multiple Wi-Fi receiver.
 
-###Receiver chain:
+### 2. Receiver chain:
 1. Realize two different hard-decision constellation de-mapping schemes;
 2. Implement differential decoding algorithm between phase-offset estimation and compensation;
 3. Enhance the iterative channel equalization algorithm for long frame reliable transmission;
