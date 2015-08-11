@@ -72,4 +72,5 @@ You can change different parameters (e.g. power, packet length, modulation schem
 
 ## Further information
 For further information please refer to the TMC paper.
+
 **_“Less Transmissions, More Throughput: Bringing Carpool to Public WLANs”, IEEE Transactions on Mobile Computing (TMC 2015)_**
