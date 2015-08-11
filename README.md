@@ -23,7 +23,7 @@ Passing the flag -o will fetch and build the latest in the old 3.6 series
 ### 3. To work with Gnuradio:
 [tutorial](http://gnuradio.org/redmine/projects/gnuradio/wiki/Guided_Tutorial_GNU_Radio_in_C++)
 
-## C. PHY Layer Usage (C++)
+## PHY Layer Usage (C++)
 To enable the all the functionality of Carpool, please use the latest 3.0 version. Just copy the modified files and replace it if necessary. 
 
 ### 1. For transmitter:
