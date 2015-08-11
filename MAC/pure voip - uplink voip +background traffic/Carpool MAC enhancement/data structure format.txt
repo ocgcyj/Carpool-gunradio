@@ -1,0 +1,22 @@
+    Node(APNum+i).id = CLIENT_List(i);
+    Node(APNum+i).x = 0;
+    Node(APNum+i).y = 0;
+    Node(APNum+i).CW = CW_min;
+    Node(APNum+i).counter = 0;
+    Node(APNum+i).mode = 'idle';
+                         'tx'
+                         'rx'   
+
+    Pkt_Buff{i}(1).ta = AP_List(i);
+    Pkt_Buff{i}(1).ra = CLIENT_List(randi(ClientNum));
+    Pkt_Buff{i}(1).len = MTU; //byte
+    Pkt_Buff{i}(1).type = 'data';
+    Pkt_Buff{i}(1).time = 0; //traffic arrival time
+
+    NewEvent.time = 0;
+    NewEvent.type = 'generate_traffic';
+    NewEvent.node = AP_List(i);
+    NewEvent.pkt =  Pkt_Buff{i}(1);
+
+    Aggregation_ra_index_List{i}(1).ra = Aggregation_ra_List{i}(1);
+    Aggregation_ra_index_List{i}(1).index = index2(index3 ==Aggregation_ra_List{i}(1));

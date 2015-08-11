@@ -1,0 +1,32 @@
+By default, CW_min = 5 CW_max = 10
+
+if AP, modify CW_min_AP = 1 CW_max_AP = 5
+
+T = 100ms, n = 10, k = (0:10)
+
+Update AP priority event
+1. update priority level k per 100ms
+2. for each AP, check packet_buff size, logarithmic decide k
+   queue_size = 50, k = (0:10), floor
+3. randomly choose k distribution, 
+   
+   if k == 0, then CW_min_AP = CW_min, CW_max_AP= CW_max
+   	clear AP_k_priority
+   else  
+   	update AP_k_priority
+
+Each NODE start send packet
+1.check if AP
+2.if AP, check time in AP_k_priority
+if yes,
+	modify CW_min_AP = 1 CW_max_AP = 5
+if no,
+        CW_min_AP = CW_min, CW_max_AP= CW_max
+
+retransmit:check time in AP_k_priority
+if yes,  Node(i).CW = min(Node(i).CW + 1,CW_max_priority);
+if no, Node(i).CW = min(Node(i).CW + 1,CW_max);
+
+ack:check time in AP_k_priority
+if yes,  Node(j).CW = CW_min_priority
+if no, Node(j).CW = CW_min

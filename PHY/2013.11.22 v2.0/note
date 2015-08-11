@@ -1,0 +1,14 @@
+tx and rx format modification 
+one to 2
+no symbol interleaving, step by step, send symbol for tx1 first and then tx2
+packet size:356 byte symbolLen:65, first one is header,each rx is 32 symbol, last 4 byte is crc
+CRC added
+
+no phase offset
+diff modulation scheme
+demodulate after each symbol is received
+add one more preamble in the second symbol
+enlarge the packet size up to 20000(modify ofdm.py set whitening = false modify ofdm_packet_utils.py )
+change the symbollen limit in frame_acquisition.cc file
+add crc1 2 3 4 5
+
