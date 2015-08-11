@@ -60,6 +60,8 @@ You can change different parameters (e.g. power, packet length, modulation schem
 The event-driven simulator conforms to carrier sense multiple access (CSMA). Five different variant schemes are implemented, including Carpool baseline, Carpool enhancement, DCF, MSDU aggregation and Wifox [2]. Only VOIP traffic model is provided. Just run the code and collect the output information (e.g. throughput and delay) for further analysis.
 
 ### Main Design and Implementation
+In order to prototype Carpool, the transceiver chain where the data stream flows, needs to be significantly modified. Specifically, I have upgraded several DSP blocks and implemented the proposed algorithms within several DSP blocks. The proposed algorithms mainly include, phase-offset encoding, differential decoding, and iterative channel equalization. All the real-time functionalities are realized by C++, where we apply dynamic memory allocation and STL to handle sequential complex data stream with varying length. Besides, performance evaluation is off-line analyzed via MATLAB.
+
 ### 1. Transmitter chain:
 1. Realize two different constellation mapping schemes, which are phase shift keying and quadrature amplitude modulation;
 2. Insert four pilots in each OFDM symbol for phase-offset estimation and compensation;
